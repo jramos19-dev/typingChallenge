@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faker } from '@faker-js/faker';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'typeChallenge';
+
+  attempt: string = '';
+  randomSentence = faker.lorem.sentence();
+
+  handleattempt(value:string){
+  // this.attempt = value
+  // 
+    console.log(value)
+  }
 }

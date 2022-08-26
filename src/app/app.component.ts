@@ -9,12 +9,28 @@ import { faker } from '@faker-js/faker';
 export class AppComponent {
   title = 'typeChallenge';
 
+  solved = false;
   attempt: string = '';
   randomSentence = faker.lorem.sentence();
+  
+  onInput(input :string){
+    this.attempt= input;
 
-  handleattempt(value:string){
-  // this.attempt = value
-  // 
-    console.log(value)
   }
+
+  colorChooser(randomletter: string, attemptedLetter: string){
+    if (!attemptedLetter){
+      return 'pending'
+    }
+    // if(attemptedLetter == randomletter){
+    //   return 'rightGuess'
+    // }
+    // if(attemptedLetter != randomletter){
+    //   return "wrongGuess"
+    // }
+    //terneray expression is usable here
+    return randomletter === attemptedLetter ? 'rightGuess' : 'wrongGuess'
+
+  }
+  
 }

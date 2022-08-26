@@ -3,16 +3,17 @@
     <div class="box column is-one-third">
 
       <h1 class="title has-text-centered">Typing Challenge</h1>
-
-      <p class="has-text-centered">{{randomSentence}}</p>
+      <!-- .split('') splits the random sentence and makes it an array. , then you place a semicolon and now you can create an index to iterate with inside the split you use single quotes -->
+      <p class="has-text-centered">
+        <span *ngFor="let letter of randomSentence.split(''); let i=index;" [class]="colorChooser(letter,attempt[i])">{{letter}}</span>
+      </p>
 
       <div class="field">
 
-        you have to pass in the event to the event handling function then you can pass in the target and the value
-        <input   class="input" >
+        <input #wordInput (input)="onInput(wordInput.value)" class="input" >
       </div>
 
-      <div *ngif="randomSentence == attempt" class="box has-text-centered">
+      <div *ngIf="randomSentence == attempt" class="box has-text-centered rightGuess" style="background-color:bisque; font-size: larger;">
         <h1>Success</h1>
       </div>
 

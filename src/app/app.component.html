@@ -1,6 +1,6 @@
 <div class="container">
   <div class="columns is-centered">
-    <div class="box column is-one-third">
+    <div class="box column is-one-third" style="background-color:bisque">
 
       <h1 class="title has-text-centered">Typing Challenge</h1>
       <!-- .split('') splits the random sentence and makes it an array. , then you place a semicolon and now you can create an index to iterate with inside the split you use single quotes -->
@@ -10,10 +10,10 @@
 
       <div class="field">
 
-        <input #wordInput (input)="onInput(wordInput.value)" class="input" >
+        <input #wordInput (input)="onInput(wordInput.value)" class="input" style="background-color:coral" >
       </div>
 
-      <div *ngIf="randomSentence == attempt" class="box has-text-centered rightGuess" style="background-color:bisque; font-size: larger;">
+      <div *ngIf="randomSentence == attempt" class="box has-text-centered rightGuess" style="background-color:rgb(156, 228, 89); font-size: larger;">
         <h1>Success</h1>
       </div>
 
